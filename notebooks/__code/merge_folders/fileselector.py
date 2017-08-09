@@ -140,6 +140,15 @@ class FileSelectorPanel:
         # next step
         if self.next:
             self.next(self.selected)
+
+        _result = self.widgets[1].value
+        _name_folder = [_folder.split('|')[0].strip() for _folder in _result]
+
+        _str_name_of_folder = ", ".join(_name_folder)
+
+        display(HTML('<span style="font-size: 20px; color:blue">You have selected ' + \
+            str(len(_name_folder)) + ' folders [' + _str_name_of_folder + '] </span>')) 
+
         return
 
     def show(self):
@@ -151,6 +160,11 @@ class FileSelectorPanel:
         </style>
         """))
         display(self.panel)
+
+    def result(self):
+        _result = self.widgets[1].value
+        _name_folder = [_folder.split('|')[0].strip() for _folder in _result]
+        return _name_folder
 
     def remove(self):
         for w in self.widgets: w.close()

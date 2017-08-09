@@ -5,7 +5,7 @@ except ImportError:
     from PyQt5.QtWidgets import QFileDialog
     from PyQt5 import QtCore, QtGui
 import os
-from __code.deal_images.decorators import format_directory
+from __code.decorators import format_directory
 import platform
 
 
@@ -51,7 +51,7 @@ def gui_fname(dir=None, message='', ext='tif'):
 def gui_fimage(dir=None, message=''):
     """Select one or more image via a dialog and returns the file name.
     """
-    _filter = 'FITS (*.fits);; TIFF (*.tiff);; TIFF (*.tif)'
+    _filter = 'TIFF (*.tiff);; TIFF (*.tif);; FITS (*.fits)'
     fname = QFileDialog.getOpenFileNames(None, message,
                                          directory = dir, 
                                          filter = _filter)

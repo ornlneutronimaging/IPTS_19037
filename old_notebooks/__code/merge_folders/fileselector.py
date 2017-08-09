@@ -152,9 +152,6 @@ class FileSelectorPanel:
         """))
         display(self.panel)
 
-    def result(self):
-        return ['yo','ya','dfdf']
-
     def remove(self):
         for w in self.widgets: w.close()
         self.panel.close()
